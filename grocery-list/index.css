@@ -4,3 +4,19 @@
 .paddingTop {
   padding-top: 4%;
 }
+.flexContainer {
+  display: flex;
+  padding-top: 20%;
+  padding-left: 25%;
+
+  width: 50%;
+}
+.formDiv {
+  background-color: grey;
+  z-index: 12;
+  position: relative;
+  border: 1px solid black;
+}
+.submitButton {
+  text-align: right;
+}
