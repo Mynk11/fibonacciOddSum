@@ -17,9 +17,11 @@ const saveProductName = event => {
       currentUserName,
       "current"
     );
+
     if (currentUserProducts && currentUserProducts.length > 0) {
       if (currentUserProducts[0][currentUserName].length > 4) {
         alert("you can't add more than 5");
+
         return;
       }
       if (currentUserProducts[0][currentUserName].includes(productName)) {

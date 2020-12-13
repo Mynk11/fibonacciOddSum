@@ -10,14 +10,28 @@
 
   <body>
     <div class="centerTheDiv" id="mainDiv">
+      <div id="signOut" class="signOut">
+        <div id="userNameToShow"></div>
+        <button class="logoutButton" onclick="deleteCurrentUser()">
+          Sign Out
+        </button>
+      </div>
       <form onsubmit="checkForUseName(event)" id="signInForm">
         <label for="userName">Please Enter Your Name :</label>
         <input type="text" id="userName" />
         <input type="submit" value="Submit" />
       </form>
       <div class="paddingTop" id="productListDiv">
-        <button id="list" onclick="listAllTheItems()">List</button>
-        <button onclick="addAItemInTheList()">Add</button>
+        <!-- <button class="listButtonMargin" id="list" onclick="listAllTheItems()">
+          List
+        </button> -->
+        <button
+          class="listButtonMargin"
+          id="addButton"
+          onclick="addAItemInTheList()"
+        >
+          Add
+        </button>
       </div>
       <div id="productFormDiv">
         <form onsubmit="saveProductName(event)">
@@ -40,16 +54,16 @@
         </form>
       </div>
 
-      <ul class="showProductList" id="showProductListHeader">
-        Your Product List
-      </ul>
+      <ul class="showProductList" id="showProductListHeader"></ul>
+
+      <!-- <div onclick="redirectToHomePage()"><u>Go back to home</u></div> -->
     </div>
     <script src="./commonFunction.js"></script>
-    <script src="./index.js" type="text/javascript"></script>
-    <script src="./login.js" type="text/javascript"></script>
-    <script src="./saveProduct.js" type="text/javascript"></script>
-    <script src="./listAllItems.js" type="text/javascript"></script>
-    <script src="./edit.js" type="text/javascript"></script>
     <script src="./delete.js" type="text/javascript"></script>
+    <script src="./edit.js" type="text/javascript"></script>
+    <script src="./listAllItems.js" type="text/javascript"></script>
+    <script src="./login.js" type="text/javascript"></script>
+    <script src="./index.js" type="text/javascript"></script>
+    <script src="./saveProduct.js" type="text/javascript"></script>
   </body>
 </html>

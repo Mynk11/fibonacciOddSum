@@ -30,5 +30,5 @@ const onClickEdit = event => {
   );
   editableNode.disabled = false;
   editableNode.addEventListener("keydown", onInputValueChange, false);
-  afterEditSaveButton.style.display = "block";
+  afterEditSaveButton.style.display = "initial";
 };

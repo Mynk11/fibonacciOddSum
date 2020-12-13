@@ -1,5 +1,5 @@
 const listAllTheItems = value => {
-  document.getElementById("productListDiv").style.display = "none";
+  //document.getElementById("productListDiv").style.display = "none";
   const existingProducts = getExistingProductList();
   let currentUserName = returnCurrentUserName();
   let userProductList = findUserProductList(
@@ -15,6 +15,7 @@ const listAllTheItems = value => {
   mainDiv.removeChild(parent);
   parent = document.createElement("DIV");
   parent.setAttribute("class", "showProductList");
+  parent.innerHTML = "<h4>Your Product List</h4>";
   parent.style.display = "block";
   mainDiv.appendChild(parent);
 

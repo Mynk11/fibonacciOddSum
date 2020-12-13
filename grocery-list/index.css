@@ -2,7 +2,10 @@
   text-align: center;
 }
 .paddingTop {
-  padding-top: 4%;
+  padding: 4%;
+}
+.listButtonMargin {
+  margin-left: 26% !important;
 }
 .flexContainer {
   display: flex;
@@ -19,4 +22,19 @@
 }
 .submitButton {
   text-align: right;
+}
+.signOut {
+  float: right;
+  padding-top: 2%;
+  padding-right: 10%;
+}
+.logoutButton {
+  color: red;
+  background-color: white;
+  border-radius: 18%;
+  width: 90%;
+}
+.showProductList {
+  padding-left: 12.6%;
+  padding-top: 2%;
 }

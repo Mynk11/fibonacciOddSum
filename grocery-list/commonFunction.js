@@ -30,3 +30,8 @@ const onInputValueChange = event => {
 const redirectToHomePage = () => {
   window.location.reload();
 };
+
+const deleteCurrentUser = () => {
+  localStorage.removeItem("currentUser");
+  redirectToHomePage();
+};

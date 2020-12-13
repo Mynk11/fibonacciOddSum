@@ -1,16 +1,20 @@
 const checkForUseName = event => {
-  event.preventDefault();
   let item = localStorage.getItem("usersList");
-  let name = document.getElementById("userName").value;
+  let name =
+    document.getElementById("userName").value || returnCurrentUserName();
+  console.log("name=========>", name);
+
   //console.log("Value===>", name);
-  localStorage.setItem("currentUser", name);
+  if (!returnCurrentUserName()) {
+    localStorage.setItem("currentUser", name);
+    event.preventDefault();
+  } else {
+  }
   if (item) {
     item = JSON.parse(item);
     //console.log("Item------>", item);
     let checkForExistingUser = item.filter((key, index) => key.name === name);
-    console.log("checkForExistingUser=====>", checkForExistingUser);
     if (checkForExistingUser && checkForExistingUser.length > 0) {
-      alert(`User Exists ${checkForExistingUser}`);
     } else {
       if (!name) {
         alert("Please Enter a name");
@@ -25,4 +29,9 @@ const checkForUseName = event => {
   }
   document.getElementById("signInForm").style.display = "none";
   document.getElementById("productListDiv").style.display = "block";
+  document.getElementById("signOut").style.display = "block";
+  listAllTheItems();
+  document.getElementById(
+    "userNameToShow"
+  ).innerHTML = `User Name - ${returnCurrentUserName()}`;
 };
