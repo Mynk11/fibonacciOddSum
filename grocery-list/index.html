@@ -17,9 +17,17 @@
         </button>
       </div>
       <form onsubmit="checkForUseName(event)" id="signInForm">
-        <label for="userName">Please Enter Your Name :</label>
+        <label for="userName">User Name :</label>
         <input type="text" id="userName" />
-        <input type="submit" value="Submit" />
+        <div>
+          <label for="password">Password :</label>
+          <input type="password" id="password" />
+        </div>
+        <input type="submit" value="Sign In" />
+
+        <p>
+          If you are new to store please <a href="./register.html">Sign Up</a>
+        </p>
       </form>
       <div class="paddingTop" id="productListDiv">
         <!-- <button class="listButtonMargin" id="list" onclick="listAllTheItems()">

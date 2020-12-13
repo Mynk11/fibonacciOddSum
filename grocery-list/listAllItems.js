@@ -10,7 +10,7 @@ const listAllTheItems = value => {
   let mainDiv = document.getElementsByClassName("centerTheDiv")[0];
   let parent = document.getElementsByClassName("showProductList")[0];
 
-  console.log("parent", parent);
+  //console.log("parent", parent);
 
   mainDiv.removeChild(parent);
   parent = document.createElement("DIV");
@@ -21,7 +21,7 @@ const listAllTheItems = value => {
 
   if (userProductList && userProductList.length > 0) {
     let referenceArrayForChildNode = userProductList[0][currentUserName];
-    console.log("referenceArrayForChildNode", referenceArrayForChildNode);
+    //console.log("referenceArrayForChildNode", referenceArrayForChildNode);
     if (referenceArrayForChildNode && referenceArrayForChildNode.length > 0) {
       for (i = 0; i < referenceArrayForChildNode.length; i++) {
         let node = document.createElement("LI"); // Create a <li> node
@@ -59,8 +59,6 @@ const listAllTheItems = value => {
         node.appendChild(afterEditSaveButton);
         parent.appendChild(node); ///append Item
       }
-    } else {
-      redirectToHomePage();
     }
   }
 };

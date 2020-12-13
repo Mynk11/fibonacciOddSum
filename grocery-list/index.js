@@ -1,6 +1,4 @@
 if (returnCurrentUserName()) {
-  console.log("returnCurrentUserName", returnCurrentUserName);
-
   checkForUseName();
 } else {
   document.getElementById("signOut").style.display = "none";

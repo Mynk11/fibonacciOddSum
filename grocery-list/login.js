@@ -1,31 +1,44 @@
 const checkForUseName = event => {
-  let item = localStorage.getItem("usersList");
+  let item = getUsersList();
   let name =
     document.getElementById("userName").value || returnCurrentUserName();
-  console.log("name=========>", name);
-
-  //console.log("Value===>", name);
+  let password = document.getElementById("password").value;
+  //console.log("name=========>", name, password);
   if (!returnCurrentUserName()) {
-    localStorage.setItem("currentUser", name);
     event.preventDefault();
-  } else {
-  }
-  if (item) {
-    item = JSON.parse(item);
-    //console.log("Item------>", item);
-    let checkForExistingUser = item.filter((key, index) => key.name === name);
-    if (checkForExistingUser && checkForExistingUser.length > 0) {
-    } else {
+
+    if (item) {
+      //item = JSON.parse(item);
+      console.log("Item------>", item);
+      let checkForExistingUser = item.filter((key, index) => key.name === name);
       if (!name) {
-        alert("Please Enter a name");
+        alert("please Enter a User Name");
         return;
       }
-      item.push({ name });
-      localStorage.setItem("usersList", JSON.stringify(item));
+      if (!password) {
+        alert("please enter your password");
+        return;
+      }
+      if (checkForExistingUser && checkForExistingUser.length > 0) {
+        if (checkForExistingUser[0].password != password || !password) {
+          //wrongPassword = true;
+          alert("please enter a correct password");
+          return;
+        }
+
+        localStorage.setItem("currentUser", name);
+      } else {
+        if (!name) {
+          alert("Please Enter a name");
+          return;
+        } else {
+          alert("User with this name does not exist! please sign up");
+          return;
+        }
+      }
+    } else {
+      alert("Please Register");
     }
-  } else {
-    item = JSON.stringify([{ name: name }]);
-    localStorage.setItem("usersList", item);
   }
   document.getElementById("signInForm").style.display = "none";
   document.getElementById("productListDiv").style.display = "block";

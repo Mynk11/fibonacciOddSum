@@ -7,6 +7,21 @@
 .listButtonMargin {
   margin-left: 26% !important;
 }
+
+input {
+  margin: 0.2%;
+}
+
+input[type="password"] {
+  margin-left: 1%;
+}
+
+input[type="submit"] {
+  margin-left: 18%;
+  padding: 0.4%;
+  border-radius: 15%;
+  background-color: aqua;
+}
 .flexContainer {
   display: flex;
   padding-top: 20%;

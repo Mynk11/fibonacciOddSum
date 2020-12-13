@@ -35,3 +35,16 @@ const deleteCurrentUser = () => {
   localStorage.removeItem("currentUser");
   redirectToHomePage();
 };
+
+const getUsersList = () => {
+  let users = localStorage.getItem("usersList");
+  if (users) {
+    return JSON.parse(users);
+  } else {
+    return "";
+  }
+};
+
+const redirectToLoginPage = () => {
+  window.location.assign("./index.html");
+};
